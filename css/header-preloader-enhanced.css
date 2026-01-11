@@ -1,0 +1,279 @@
+/* ============================================
+   PREMIUM HEADER/NAVBAR ENHANCEMENTS
+   ============================================ */
+
+/* ========== HEADER ENHANCEMENTS ========== */
+
+header {
+    background: rgba(12, 16, 22, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    position: relative;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+header .container {
+    padding: 16px 15px !important;
+}
+
+/* ========== LOGO IMPROVEMENTS ========== */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.logo a:hover {
+    filter: drop-shadow(0 8px 20px rgba(212, 175, 55, 0.4));
+    transform: scale(1.05);
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+@keyframes logo-entrance {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* ========== NAVIGATION LINKS ========== */
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #e8e8e8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    letter-spacing: 0.3px;
+}
+
+/* Underline animation for nav links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4c430);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-links a:hover {
+    color: #f4c430;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Exclude button from underline effect */
+.nav-links .btn-apply::after {
+    display: none;
+}
+
+/* ========== PREMIUM LOGIN BUTTON ========== */
+
+.btn-apply {
+    background: linear-gradient(135deg, #c62828 0%, #d63031 100%) !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.5px !important;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(198, 40, 40, 0.25);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+    margin-left: 12px;
+}
+
+.btn-apply::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.btn-apply:hover::before {
+    left: 100%;
+}
+
+.btn-apply:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(198, 40, 40, 0.4);
+    background: linear-gradient(135deg, #d63031 0%, #e17055 100%) !important;
+    letter-spacing: 1px;
+}
+
+.btn-apply:active {
+    transform: translateY(-2px);
+}
+
+/* ========== HAMBURGER MENU ========== */
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger-menu span {
+    width: 26px;
+    height: 3px;
+    background: #e8e8e8;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(11px, 11px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+
+@media (max-width: 768px) {
+    nav {
+        gap: 20px;
+    }
+
+    .logo a {
+        height: 50px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: 0;
+        top: 120px;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(12, 16, 22, 0.98);
+        backdrop-filter: blur(10px);
+        gap: 0;
+        padding: 20px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        z-index: 999;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .nav-links.active {
+        max-height: 600px;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 15px 30px;
+        border-radius: 0;
+        border-left: 3px solid transparent;
+    }
+
+    .nav-links a:hover {
+        border-left-color: #d4af37;
+        background: rgba(212, 175, 55, 0.08);
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .btn-apply {
+        margin-left: 0 !important;
+        margin-top: 10px;
+        width: calc(100% - 60px);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        height: 45px;
+    }
+
+    .top-bar {
+        font-size: 0.85rem;
+        padding: 8px 0;
+    }
+
+    .contact-info {
+        font-size: 0.8rem;
+    }
+
+    .top-links a {
+        font-size: 0.75rem;
+        margin-left: 8px;
+    }
+
+    .preloader-text {
+        font-size: 2rem;
+    }
+
+    .preloader-tagline {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== TRANSITION SMOOTHNESS ========== */
+
+* {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

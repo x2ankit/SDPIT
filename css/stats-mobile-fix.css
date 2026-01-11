@@ -1,0 +1,166 @@
+/* ================================================
+   STATISTICS SECTION MOBILE FIXES
+   Grid layout for better mobile display
+   ================================================ */
+
+/* Mobile phones (max 576px) - 2x2 Grid Layout */
+@media (max-width: 576px) {
+    .achievement-stats {
+        padding: 40px 0 !important;
+    }
+    
+    .stats-carousel-wrapper {
+        padding: 0 15px !important;
+        overflow: visible !important;
+    }
+    
+    .carousel-nav {
+        display: none !important;
+    }
+    
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+        overflow: visible !important;
+        padding: 10px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .stats-grid .stat-card {
+        min-width: auto !important;
+        width: 100% !important;
+        flex-shrink: 1 !important;
+    }
+    
+    .stat-card {
+        padding: 20px 15px !important;
+        border-radius: 16px !important;
+        min-height: 160px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .stat-card h3 {
+        font-size: 2rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .stat-content {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .stat-content p {
+        font-size: 0.8rem !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .stat-icon {
+        width: 55px !important;
+        height: 55px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .stat-icon i {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Small phones (max 360px) - Compact 2x2 Grid */
+@media (max-width: 360px) {
+    .stats-carousel-wrapper {
+        padding: 0 12px !important;
+    }
+    
+    .stats-grid {
+        gap: 12px !important;
+    }
+    
+    .stat-card {
+        padding: 18px 12px !important;
+        min-height: 145px !important;
+    }
+    
+    .stat-card h3 {
+        font-size: 1.8rem !important;
+    }
+    
+    .stat-content p {
+        font-size: 0.75rem !important;
+    }
+    
+    .stat-icon {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .stat-icon i {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* Extra small phones (max 320px) - Minimal 2x2 Grid */
+@media (max-width: 320px) {
+    .stats-carousel-wrapper {
+        padding: 0 10px !important;
+    }
+    
+    .stats-grid {
+        gap: 10px !important;
+    }
+    
+    .stat-card {
+        padding: 16px 10px !important;
+        min-height: 135px !important;
+    }
+    
+    .stat-card h3 {
+        font-size: 1.6rem !important;
+    }
+    
+    .stat-content p {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.3px;
+    }
+    
+    .stat-icon {
+        width: 45px !important;
+        height: 45px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .stat-icon i {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Tablet landscape - keep horizontal scroll */
+@media (min-width: 577px) and (max-width: 768px) {
+    .stats-carousel-wrapper {
+        padding: 0 40px !important;
+    }
+    
+    .stats-grid {
+        display: flex !important;
+        gap: 20px !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+    }
+    
+    .stats-grid .stat-card {
+        min-width: 200px !important;
+        width: 200px !important;
+    }
+}
+
+/* Desktop - centered layout */
+@media (min-width: 769px) {
+    .stats-grid {
+        justify-content: center;
+    }
+}

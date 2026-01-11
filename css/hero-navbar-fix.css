@@ -1,0 +1,136 @@
+/* ================================================
+   HERO & NAVBAR OVERLAP FIX - REDESIGNED
+   Clean separation between navbar and hero
+   ================================================ */
+
+/* Desktop: Fixed navbar with proper spacing */
+@media (min-width: 1025px) {
+    /* Top bar stays fixed at very top */
+    .top-bar-premium {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1002;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    /* Navbar sits directly below top bar at 52px */
+    .navbar-premium {
+        position: fixed !important;
+        top: 52px;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        width: 100%;
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Hero section starts at 180px (52px topbar + ~60px navbar + 30px buffer) */
+    .hero-premium {
+        margin-top: 180px !important;
+        padding-top: 0 !important;
+        height: calc(100vh - 180px);
+        min-height: 600px;
+    }
+    
+    /* Sections after hero */
+    .brand-strip,
+    .achievement-banner {
+        margin-top: 0;
+        position: relative;
+        z-index: 5;
+    }
+    
+    body {
+        padding-top: 0;
+    }
+}
+
+/* Tablet: Medium navbar layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .top-bar-premium {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1002;
+        width: 100%;
+        padding: 8px 0;
+    }
+    
+    .navbar-premium {
+        position: fixed !important;
+        top: 48px;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        width: 100%;
+        padding: 10px 15px;
+    }
+    
+    .hero-premium {
+        margin-top: 140px !important;
+        padding-top: 0 !important;
+        height: calc(100vh - 140px);
+        min-height: 550px;
+    }
+}
+
+/* Mobile: Dynamic offsets using CSS variables */
+@media (max-width: 768px) {
+    .top-bar-premium {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1002;
+        width: 100%;
+        height: var(--topbar-h, 52px);
+    }
+    
+    .navbar-premium {
+        position: fixed;
+        top: var(--topbar-h, 52px);
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        width: 100%;
+    }
+    
+    .hero-premium {
+        margin-top: calc(var(--topbar-h, 52px) + var(--navbar-h, 56px)) !important;
+        padding-top: 0 !important;
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .navbar-menu {
+        top: calc(var(--topbar-h, 52px) + var(--navbar-h, 56px)) !important;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .hero-premium {
+        margin-top: calc(var(--topbar-h, 48px) + var(--navbar-h, 50px)) !important;
+    }
+}
+
+/* Smooth transitions */
+.navbar-premium,
+.top-bar-premium,
+.hero-premium {
+    transition: all 0.3s ease;
+}
+
+/* Prevent body issues */
+body {
+    padding-top: 0;
+    margin-top: 0;
+}

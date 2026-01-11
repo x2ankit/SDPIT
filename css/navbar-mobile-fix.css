@@ -1,0 +1,406 @@
+/* ================================================
+    MOBILE NAVIGATION - SIMPLE & CLEAN
+    Phone-friendly, no overlaps, professional
+    ================================================ */
+
+/* Mobile Navigation Reset & Redesign */
+@media (max-width: 768px) {
+    /* Top Bar - Clean Red Bar with Links */
+    .top-bar-premium {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1002;
+        padding: 6px 8px;
+        background: linear-gradient(135deg, #b91c2c 0%, #dc2626 100%);
+        width: 100vw;
+    }
+    
+    .top-bar-container {
+        flex-direction: column;
+        gap: 4px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .top-bar-contact {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+    }
+    
+    .contact-item i {
+        margin-right: 3px;
+    }
+    
+    .contact-item strong {
+        display: inline;
+        font-size: 0.85rem;
+    }
+    
+    .top-bar-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3px;
+        width: 100%;
+    }
+    
+    .top-link {
+        font-size: 0.65rem !important;
+        padding: 4px 4px !important;
+        text-align: center;
+        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 3px;
+        color: white !important;
+        text-decoration: none;
+        display: block;
+        transition: all 0.2s ease;
+    }
+    
+    .top-link:active {
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    /* Main Navbar - Simple Black Bar */
+    .navbar-premium {
+        position: fixed;
+        top: 48px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        background: #222;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        margin-top: 0;
+        z-index: 1001;
+        height: 50px;
+        width: 100vw;
+    }
+    
+    .navbar-premium-container {
+        padding: 0;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    .navbar-premium-nav {
+        background: transparent;
+        backdrop-filter: none;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    
+    /* Logo */
+    .navbar-logo-wrapper {
+        flex: 0;
+        z-index: 2;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+    
+    .navbar-logo-img {
+        height: 40px !important;
+        width: auto !important;
+    }
+    
+    /* Hamburger Menu - Three Dot Style */
+    .navbar-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1003;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbar-hamburger:active {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .hamburger-line {
+        width: 5px;
+        height: 5px;
+        background: #fff;
+        border-radius: 50%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .navbar-hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    
+    .navbar-hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 1;
+    }
+    
+    .navbar-hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    
+    /* Mobile Menu - Slide in from Left with Glass Effect */
+    .navbar-menu {
+        position: fixed !important;
+        top: 98px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        flex-direction: column !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        overflow-y: auto !important;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.3s ease !important;
+        border-radius: 0 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.3) !important;
+        margin-top: 0 !important;
+        z-index: 1000 !important;
+        pointer-events: none !important;
+        width: 100vw !important;
+        list-style: none !important;
+        max-height: none !important;
+        height: auto !important;
+    }
+    
+    .navbar-menu.active {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .navbar-menu-item {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+        animation: slideInMenuItem 0.4s ease forwards !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    
+    .navbar-menu-item:nth-child(1) { animation-delay: 0.05s; }
+    .navbar-menu-item:nth-child(2) { animation-delay: 0.1s; }
+    .navbar-menu-item:nth-child(3) { animation-delay: 0.15s; }
+    .navbar-menu-item:nth-child(4) { animation-delay: 0.2s; }
+    .navbar-menu-item:nth-child(5) { animation-delay: 0.25s; }
+    .navbar-menu-item:nth-child(6) { animation-delay: 0.3s; }
+    .navbar-menu-item:nth-child(7) { animation-delay: 0.35s; }
+    .navbar-menu-item:nth-child(n+8) { animation-delay: 0.4s; }
+    
+    @keyframes slideInMenuItem {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .navbar-menu-item:last-child {
+        border-bottom: none !important;
+    }
+    
+    .navbar-menu-item a {
+        color: #333 !important;
+        text-decoration: none !important;
+    }
+    
+    .navbar-menu-item.separator-divider {
+        height: 8px !important;
+        background: rgba(0, 0, 0, 0.03) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+        cursor: default !important;
+        margin: 4px 0 !important;
+        padding: 0 !important;
+    }
+    
+    .navbar-menu-link {
+        padding: 14px 18px !important;
+        width: 100% !important;
+        text-align: left !important;
+        font-size: 1rem !important;
+        color: #333 !important;
+        border-left: 4px solid transparent !important;
+        transition: all 0.2s ease !important;
+        display: block !important;
+        cursor: pointer !important;
+        letter-spacing: 0.3px !important;
+        font-weight: 600 !important;
+        background: transparent !important;
+        text-decoration: none !important;
+        line-height: 1.5 !important;
+        position: relative !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    .navbar-menu-link::before {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: none !important;
+        content: none !important;
+    }
+    
+    .navbar-menu-link::after {
+        display: none !important;
+    }
+    
+    .navbar-menu-link:hover,
+    .navbar-menu-link:active,
+    .navbar-menu-link:focus {
+        background: rgba(185, 28, 44, 0.08) !important;
+        border-left-color: #b91c2c !important;
+        color: #b91c2c !important;
+        padding-left: 24px !important;
+        text-shadow: none !important;
+        transform: none !important;
+    }
+    
+    /* Login Button Mobile */
+    .navbar-cta {
+        margin-left: 0;
+        display: block !important;
+    }
+    
+    .navbar-cta .navbar-menu-link {
+        background: linear-gradient(135deg, #b91c2c 0%, #c62828 100%) !important;
+        color: white !important;
+        font-weight: 700 !important;
+    }
+    
+    .navbar-cta .navbar-menu-link:hover {
+        background: linear-gradient(135deg, #8e0000 0%, #b91c2c 100%) !important;
+        color: white !important;
+    }
+    
+    .navbar-btn-login {
+        width: 100% !important;
+        padding: 12px 18px !important;
+        border-radius: 0 !important;
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        background: linear-gradient(135deg, #b91c2c 0%, #c62828 100%) !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .navbar-btn-login:hover {
+        background: linear-gradient(135deg, #8e0000 0%, #b91c2c 100%) !important;
+        box-shadow: none !important;
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    /* Hero Section Adjustment */
+    .hero-premium,
+    section:first-of-type {
+        margin-top: 98px !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Scrolled State */
+    .navbar-premium.scrolled {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Small Phones - Extra Compact */
+@media (max-width: 576px) {
+    .top-bar-premium {
+        padding: 6px 10px;
+    }
+    
+    .contact-item {
+        font-size: 0.75rem;
+    }
+    
+    .navbar-premium {
+        height: 48px;
+    }
+    
+    .navbar-logo-img {
+        height: 36px !important;
+    }
+    
+    .hamburger-line {
+        width: 4px;
+        height: 4px;
+    }
+    
+    .navbar-menu {
+        top: 98px;
+    }
+    
+    .navbar-menu-link {
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .hero-premium,
+    section:first-of-type {
+        margin-top: 98px !important;
+    }
+}
+
+/* Extra Small Phones */
+@media (max-width: 360px) {
+    .contact-item {
+        font-size: 0.7rem;
+    }
+    
+    .contact-item strong {
+        font-size: 0.75rem;
+    }
+    
+    .navbar-menu-link {
+        font-size: 0.85rem !important;
+        padding: 10px 14px !important;
+    }
+}
+
+/* Tablet - Intermediate Design */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar-menu {
+        gap: 4px;
+    }
+    
+    .navbar-menu-link {
+        font-size: 0.85rem;
+        padding: 12px 16px;
+    }
+}

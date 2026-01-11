@@ -1,0 +1,39 @@
+/* ============================================
+   CHAIRMAN MESSAGE - MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Mobile phones (max 576px) */
+@media (max-width: 576px) {
+    .chairman-message .section-title-main {
+        font-size: 1.8rem;
+    }
+    
+    .chairman-message-column {
+        padding: 30px 25px;
+    }
+    
+    .message-body {
+        font-size: 0.95rem;
+    }
+    
+    .message-greeting {
+        font-size: 1.2rem;
+    }
+    
+    .photo-frame {
+        width: 200px;
+        height: 240px;
+    }
+}
+
+/* Small phones (max 360px) */
+@media (max-width: 360px) {
+    .chairman-message .section-title-main {
+        font-size: 1.6rem;
+    }
+    
+    .photo-frame {
+        width: 180px;
+        height: 220px;
+    }
+}
